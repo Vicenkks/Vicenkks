@@ -34,7 +34,7 @@ I'm still building my path in development, learning day by day, with several pro
 
 ---
 
-## 🎯 Areas of interest
+## Areas of interest
 
 <div align="center">
 

@@ -58,8 +58,7 @@ approach: Learn → Experiment → Build → Improve
 
 <div align="center">
 
-<img height="220" src="https://www.readmecodegen.com/api/github-stats/svg?username=Vicenkks&followers=false&following=false" alt="Vicenkks GitHub statistics" />
-<img height="220" src="https://www.readmecodegen.com/api/github-stats/svg?username=Vicenkks&cardType=langs&followers=false&following=false" alt="Languages in public repositories" />
+<img width="100%" src="assets/github-stats.svg" alt="Public and private repository totals, commit contributions and languages" />
 
 </div>
 

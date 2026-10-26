@@ -18,7 +18,17 @@
 
 - Repositorios propios accesibles al token, separados en públicos y privados. No incluye repositorios de organizaciones ni aquellos donde solo colaboras.
 - Lenguajes según bytes de código de la rama predeterminada, excluyendo forks. Son los 10 principales; los porcentajes usan el total de todos los lenguajes. No mide tiempo de trabajo ni dominio de una tecnología.
-- Commits reconocidos como contribuciones por GitHub, consultados año por año desde la creación de la cuenta. Pueden incluir contribuciones en otros repositorios accesibles, pero no todos los commits de todas las ramas. La identidad del autor, el acceso del token y las reglas de contribución de GitHub afectan al resultado.
+- Commits de tu autoría en todas las ramas actuales de los repositorios accesibles, sin límite de fecha y sin duplicados por SHA. Consulta los límites de acceso e identidad más abajo.
 - Solo se publica el SVG con cifras agregadas: nunca nombres de repositorios privados ni su código.
 
 Si el token caduca o faltan permisos, la ejecución falla y conserva la última imagen. La fecha de actualización permite detectar datos antiguos. Si hay un error 403 al hacer push, revisa **Settings → Actions → General → Workflow permissions** y las reglas de protección de `main`.
+
+## Conteo de commits en todas las ramas
+
+El script ahora recorre todas las ramas actuales de todos los repositorios accesibles al token (propios, colaboraciones y organizaciones). Cuenta commits cuyo autor coincida con `Vicenkks`, sin límite de fecha, y deduplica por SHA incluso entre forks. Los contadores de repositorios y los lenguajes siguen limitados a repositorios propios.
+
+Si usaste correos que GitHub no asocia con tu cuenta, crea opcionalmente el secreto Actions `PROFILE_COMMIT_EMAILS` con esos correos separados por comas. No se publican. No agregues correos de otras personas.
+
+No puede contar commits solo locales, de repositorios sin acceso, ni commits que ya no sean alcanzables desde ninguna rama actual. Los repositorios de organizaciones pueden requerir un token y autorización distintos; un token fine-grained limitado a Vicenkks no concede acceso automático a todos ellos. Si la API falla, no se publica un total parcial. Repositorios grandes y muchas ramas pueden alcanzar los límites de la API.
+
+Después de subir la corrección, ejecuta de nuevo **Actions → Update profile statistics → Run workflow**.

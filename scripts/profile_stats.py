@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import urllib.request
+from urllib.parse import urlencode
 
 OWNER = 'Vicenkks'
 
@@ -22,31 +23,44 @@ def api(path, body=None):
         raise RuntimeError('GraphQL query failed. Check token permissions; statistics were not updated.')
     return result
 
+def pages(path, **params):
+    page = 1
+    while True:
+        batch = api(path + '?' + urlencode({**params, 'per_page': 100, 'page': page}))
+        yield from batch
+        if len(batch) < 100:
+            return
+        page += 1
+
+
+def count_commits(repos):
+    # SHA deduplication also prevents counting shared history in forks twice.
+    seen = set()
+    authors = {OWNER}
+    authors.update(email.strip() for email in os.environ.get('COMMIT_EMAILS', '').split(',') if email.strip())
+    for repo in repos:
+        base = '/repos/' + repo['full_name']
+        for branch in pages(base + '/branches'):
+            for author in sorted(authors):
+                for commit in pages(base + '/commits', sha=branch['commit']['sha'], author=author):
+                    seen.add(commit['sha'])
+    return len(seen)
+
+
 def collect():
     user = api('/user')
     if user['login'].lower() != OWNER.lower():
         raise RuntimeError('The token must belong to Vicenkks.')
-    repos = []
-    page = 1
-    while True:
-        batch = api(f'/user/repos?affiliation=owner&per_page=100&page={page}')
-        repos.extend(r for r in batch if r['owner']['login'].lower() == OWNER.lower())
-        if len(batch) < 100:
-            break
-        page += 1
+    accessible = list(pages('/user/repos', affiliation='owner,collaborator,organization_member'))
+    owned = [r for r in accessible if r['owner']['login'].lower() == OWNER.lower()]
     languages = collections.Counter()
-    for repo in repos:
+    for repo in owned:
         if not repo['fork']:
             languages.update(api('/repos/' + repo['full_name'] + '/languages'))
+    commits = count_commits(accessible)
     now = dt.datetime.now(dt.timezone.utc)
-    commits = 0
-    query = '''query($login:String!,$from:DateTime!,$to:DateTime!){user(login:$login){contributionsCollection(from:$from,to:$to){totalCommitContributions}}}'''
-    for year in range(int(user['created_at'][:4]), now.year + 1):
-        end = min(now, dt.datetime(year, 12, 31, 23, 59, 59, tzinfo=dt.timezone.utc))
-        variables = {'login': OWNER, 'from': f'{year}-01-01T00:00:00Z', 'to': end.strftime('%Y-%m-%dT%H:%M:%SZ')}
-        commits += api('/graphql', {'query': query, 'variables': variables})['data']['user']['contributionsCollection']['totalCommitContributions']
-    private = sum(r['private'] for r in repos)
-    return len(repos) - private, private, commits, languages, now
+    private = sum(r['private'] for r in owned)
+    return len(owned) - private, private, commits, languages, now
 
 def render(public, private, commits, languages, now):
     top = languages.most_common(10)
@@ -57,7 +71,7 @@ def render(public, private, commits, languages, now):
         f'<rect width="800" height="{height}" rx="16" fill="#0d1117"/>',
         '<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#c9d1d9;font-size:14px}.title{fill:#e63946;font-size:22px;font-weight:bold}.value{fill:#fff;font-size:30px;font-weight:bold}.muted{fill:#8b949e;font-size:12px}</style>',
         '<text x="30" y="40" class="title">GITHUB // ANALYTICS</text>']
-    for x, value, label in [(30, public, 'Public repos'), (280, private, 'Private repos'), (530, commits, 'Commit contributions¹')]:
+    for x, value, label in [(30, public, 'Public repos'), (280, private, 'Private repos'), (530, commits, 'Authored commits¹')]:
         parts += [f'<text x="{x}" y="95" class="value">{value:,}</text>', f'<text x="{x}" y="122">{label}</text>']
     parts.append('<text x="30" y="166">LANGUAGES // CODE VOLUME · EXCLUDING FORKS</text>')
     total = sum(languages.values())
@@ -68,8 +82,8 @@ def render(public, private, commits, languages, now):
             f'<rect x="200" y="{y-12}" width="450" height="12" rx="6" fill="#21262d"/>',
             f'<rect x="200" y="{y-12}" width="{450*percent/100:.2f}" height="12" rx="6" fill="#e63946"/>',
             f'<text x="740" y="{y}" text-anchor="end">{percent:.1f}%</text>']
-    parts += [f'<text x="30" y="{height-55}" class="muted">Scope: owned repositories accessible to the token. Private names are never published.</text>',
-        f'<text x="30" y="{height-35}" class="muted">¹ Since account creation, following GitHub contribution rules; not all branches.</text>',
+    parts += [f'<text x="30" y="{height-55}" class="muted">Repos/languages: owned repositories. Commits: accessible repositories, including collaborations.</text>',
+        f'<text x="30" y="{height-35}" class="muted">¹ All current branches, deduplicated by SHA; authors matched by GitHub login / configured emails.</text>',
         f'<text x="30" y="{height-15}" class="muted">Updated {now:%Y-%m-%d %H:%M} UTC</text>', '</svg>']
     return '\n'.join(parts)
 

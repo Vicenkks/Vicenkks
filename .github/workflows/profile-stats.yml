@@ -16,6 +16,7 @@ jobs:
       - name: Generate aggregate statistics
         env:
           PROFILE_STATS_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN }}
+          COMMIT_EMAILS: ${{ secrets.PROFILE_COMMIT_EMAILS }}
         run: python3 scripts/profile_stats.py
       - name: Save statistics
         run: |

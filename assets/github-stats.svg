@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="585" viewBox="0 0 800 585" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="545" viewBox="0 0 800 545" role="img" aria-labelledby="title desc">
 <title id="title">Vicenkks GitHub analytics</title>
 <desc id="desc">Aggregate statistics for repositories accessible to the configured token.</desc>
-<rect width="800" height="585" rx="16" fill="#0d1117"/>
+<rect width="800" height="545" rx="16" fill="#0d1117"/>
 <style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#c9d1d9;font-size:14px}.title{fill:#e63946;font-size:22px;font-weight:bold}.value{fill:#fff;font-size:30px;font-weight:bold}.muted{fill:#8b949e;font-size:12px}</style>
 <text x="30" y="40" class="title">GITHUB // ANALYTICS</text>
 <text x="30" y="95" class="value">12</text>
@@ -9,8 +9,8 @@
 <text x="280" y="95" class="value">3</text>
 <text x="280" y="122">Private repos</text>
 <text x="530" y="95" class="value">17,420</text>
-<text x="530" y="122">Authored commits¹</text>
-<text x="30" y="166">LANGUAGES // CODE VOLUME · EXCLUDING FORKS</text>
+<text x="530" y="122">Authored commits</text>
+<text x="30" y="166">LANGUAGES // CODE VOLUME</text>
 <text x="30" y="200">Python</text>
 <rect x="200" y="188" width="450" height="12" rx="6" fill="#21262d"/>
 <rect x="200" y="188" width="350.40" height="12" rx="6" fill="#e63946"/>
@@ -51,7 +51,5 @@
 <rect x="200" y="476" width="450" height="12" rx="6" fill="#21262d"/>
 <rect x="200" y="476" width="0.17" height="12" rx="6" fill="#e63946"/>
 <text x="740" y="488" text-anchor="end">0.0%</text>
-<text x="30" y="530" class="muted">Repos/languages: owned repositories. Commits: accessible repositories, including collaborations.</text>
-<text x="30" y="550" class="muted">¹ All current branches, deduplicated by SHA; authors matched by GitHub login / configured emails.</text>
-<text x="30" y="570" class="muted">Updated 2026-10-26 06:58 UTC</text>
+<text x="30" y="530" class="muted">Updated 2026-10-26 06:58 UTC</text>
 </svg>

@@ -64,16 +64,16 @@ def collect():
 
 def render(public, private, commits, languages, now):
     top = languages.most_common(10)
-    height = 265 + 32 * len(top)
+    height = 225 + 32 * len(top)
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="800" height="{height}" viewBox="0 0 800 {height}" role="img" aria-labelledby="title desc">',
         '<title id="title">Vicenkks GitHub analytics</title>',
         '<desc id="desc">Aggregate statistics for repositories accessible to the configured token.</desc>',
         f'<rect width="800" height="{height}" rx="16" fill="#0d1117"/>',
         '<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#c9d1d9;font-size:14px}.title{fill:#e63946;font-size:22px;font-weight:bold}.value{fill:#fff;font-size:30px;font-weight:bold}.muted{fill:#8b949e;font-size:12px}</style>',
         '<text x="30" y="40" class="title">GITHUB // ANALYTICS</text>']
-    for x, value, label in [(30, public, 'Public repos'), (280, private, 'Private repos'), (530, commits, 'Authored commits¹')]:
+    for x, value, label in [(30, public, 'Public repos'), (280, private, 'Private repos'), (530, commits, 'Authored commits')]:
         parts += [f'<text x="{x}" y="95" class="value">{value:,}</text>', f'<text x="{x}" y="122">{label}</text>']
-    parts.append('<text x="30" y="166">LANGUAGES // CODE VOLUME · EXCLUDING FORKS</text>')
+    parts.append('<text x="30" y="166">LANGUAGES // CODE VOLUME</text>')
     total = sum(languages.values())
     for i, (name, size) in enumerate(top):
         y = 200 + 32 * i
@@ -82,9 +82,7 @@ def render(public, private, commits, languages, now):
             f'<rect x="200" y="{y-12}" width="450" height="12" rx="6" fill="#21262d"/>',
             f'<rect x="200" y="{y-12}" width="{450*percent/100:.2f}" height="12" rx="6" fill="#e63946"/>',
             f'<text x="740" y="{y}" text-anchor="end">{percent:.1f}%</text>']
-    parts += [f'<text x="30" y="{height-55}" class="muted">Repos/languages: owned repositories. Commits: accessible repositories, including collaborations.</text>',
-        f'<text x="30" y="{height-35}" class="muted">¹ All current branches, deduplicated by SHA; authors matched by GitHub login / configured emails.</text>',
-        f'<text x="30" y="{height-15}" class="muted">Updated {now:%Y-%m-%d %H:%M} UTC</text>', '</svg>']
+    parts += [f'<text x="30" y="{height-15}" class="muted">Updated {now:%Y-%m-%d %H:%M} UTC</text>', '</svg>']
     return '\n'.join(parts)
 
 if __name__ == '__main__':

@@ -6,50 +6,50 @@
 <text x="30" y="40" class="title">GITHUB // ANALYTICS</text>
 <text x="30" y="95" class="value">17</text>
 <text x="30" y="122">Public repos</text>
-<text x="280" y="95" class="value">3</text>
+<text x="280" y="95" class="value">4</text>
 <text x="280" y="122">Private repos</text>
-<text x="530" y="95" class="value">17,474</text>
+<text x="530" y="95" class="value">17,479</text>
 <text x="530" y="122">Authored commits</text>
 <text x="30" y="166">LANGUAGES // CODE VOLUME</text>
 <text x="30" y="200">Python</text>
 <rect x="200" y="188" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="188" width="324.93" height="12" rx="6" fill="#e63946"/>
-<text x="740" y="200" text-anchor="end">72.2%</text>
-<text x="30" y="232">HTML</text>
+<rect x="200" y="188" width="264.39" height="12" rx="6" fill="#e63946"/>
+<text x="740" y="200" text-anchor="end">58.8%</text>
+<text x="30" y="232">TypeScript</text>
 <rect x="200" y="220" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="220" width="51.81" height="12" rx="6" fill="#e63946"/>
-<text x="740" y="232" text-anchor="end">11.5%</text>
-<text x="30" y="264">JavaScript</text>
+<rect x="200" y="220" width="56.77" height="12" rx="6" fill="#e63946"/>
+<text x="740" y="232" text-anchor="end">12.6%</text>
+<text x="30" y="264">HTML</text>
 <rect x="200" y="252" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="252" width="36.78" height="12" rx="6" fill="#e63946"/>
-<text x="740" y="264" text-anchor="end">8.2%</text>
+<rect x="200" y="252" width="42.38" height="12" rx="6" fill="#e63946"/>
+<text x="740" y="264" text-anchor="end">9.4%</text>
 <text x="30" y="296">CSS</text>
 <rect x="200" y="284" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="284" width="16.60" height="12" rx="6" fill="#e63946"/>
-<text x="740" y="296" text-anchor="end">3.7%</text>
-<text x="30" y="328">TeX</text>
+<rect x="200" y="284" width="41.87" height="12" rx="6" fill="#e63946"/>
+<text x="740" y="296" text-anchor="end">9.3%</text>
+<text x="30" y="328">JavaScript</text>
 <rect x="200" y="316" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="316" width="5.71" height="12" rx="6" fill="#e63946"/>
-<text x="740" y="328" text-anchor="end">1.3%</text>
-<text x="30" y="360">C</text>
+<rect x="200" y="316" width="30.09" height="12" rx="6" fill="#e63946"/>
+<text x="740" y="328" text-anchor="end">6.7%</text>
+<text x="30" y="360">TeX</text>
 <rect x="200" y="348" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="348" width="4.30" height="12" rx="6" fill="#e63946"/>
+<rect x="200" y="348" width="4.65" height="12" rx="6" fill="#e63946"/>
 <text x="740" y="360" text-anchor="end">1.0%</text>
-<text x="30" y="392">Dockerfile</text>
+<text x="30" y="392">C</text>
 <rect x="200" y="380" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="380" width="3.77" height="12" rx="6" fill="#e63946"/>
+<rect x="200" y="380" width="3.50" height="12" rx="6" fill="#e63946"/>
 <text x="740" y="392" text-anchor="end">0.8%</text>
-<text x="30" y="424">TypeScript</text>
+<text x="30" y="424">Dockerfile</text>
 <rect x="200" y="412" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="412" width="2.05" height="12" rx="6" fill="#e63946"/>
-<text x="740" y="424" text-anchor="end">0.5%</text>
+<rect x="200" y="412" width="3.07" height="12" rx="6" fill="#e63946"/>
+<text x="740" y="424" text-anchor="end">0.7%</text>
 <text x="30" y="456">Makefile</text>
 <rect x="200" y="444" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="444" width="1.97" height="12" rx="6" fill="#e63946"/>
+<rect x="200" y="444" width="1.61" height="12" rx="6" fill="#e63946"/>
 <text x="740" y="456" text-anchor="end">0.4%</text>
 <text x="30" y="488">Mako</text>
 <rect x="200" y="476" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="476" width="1.88" height="12" rx="6" fill="#e63946"/>
-<text x="740" y="488" text-anchor="end">0.4%</text>
-<text x="30" y="530" class="muted">Updated 2026-11-13 14:42 UTC</text>
+<rect x="200" y="476" width="1.53" height="12" rx="6" fill="#e63946"/>
+<text x="740" y="488" text-anchor="end">0.3%</text>
+<text x="30" y="530" class="muted">Updated 2026-11-14 13:39 UTC</text>
 </svg>

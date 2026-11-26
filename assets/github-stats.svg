@@ -8,36 +8,36 @@
 <text x="30" y="122">Public repos</text>
 <text x="280" y="95" class="value">5</text>
 <text x="280" y="122">Private repos</text>
-<text x="530" y="95" class="value">17,501</text>
+<text x="530" y="95" class="value">17,508</text>
 <text x="530" y="122">Authored commits</text>
 <text x="30" y="166">LANGUAGES // CODE VOLUME</text>
 <text x="30" y="200">Python</text>
 <rect x="200" y="188" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="188" width="233.33" height="12" rx="6" fill="#e63946"/>
-<text x="740" y="200" text-anchor="end">51.9%</text>
+<rect x="200" y="188" width="232.47" height="12" rx="6" fill="#e63946"/>
+<text x="740" y="200" text-anchor="end">51.7%</text>
 <text x="30" y="232">JavaScript</text>
 <rect x="200" y="220" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="220" width="84.38" height="12" rx="6" fill="#e63946"/>
-<text x="740" y="232" text-anchor="end">18.8%</text>
+<rect x="200" y="220" width="85.48" height="12" rx="6" fill="#e63946"/>
+<text x="740" y="232" text-anchor="end">19.0%</text>
 <text x="30" y="264">CSS</text>
 <rect x="200" y="252" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="252" width="51.53" height="12" rx="6" fill="#e63946"/>
+<rect x="200" y="252" width="51.58" height="12" rx="6" fill="#e63946"/>
 <text x="740" y="264" text-anchor="end">11.5%</text>
 <text x="30" y="296">HTML</text>
 <rect x="200" y="284" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="284" width="35.45" height="12" rx="6" fill="#e63946"/>
-<text x="740" y="296" text-anchor="end">7.9%</text>
+<rect x="200" y="284" width="35.32" height="12" rx="6" fill="#e63946"/>
+<text x="740" y="296" text-anchor="end">7.8%</text>
 <text x="30" y="328">TypeScript</text>
 <rect x="200" y="316" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="316" width="34.29" height="12" rx="6" fill="#e63946"/>
+<rect x="200" y="316" width="34.17" height="12" rx="6" fill="#e63946"/>
 <text x="740" y="328" text-anchor="end">7.6%</text>
 <text x="30" y="360">TeX</text>
 <rect x="200" y="348" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="348" width="2.81" height="12" rx="6" fill="#e63946"/>
+<rect x="200" y="348" width="2.80" height="12" rx="6" fill="#e63946"/>
 <text x="740" y="360" text-anchor="end">0.6%</text>
 <text x="30" y="392">Dockerfile</text>
 <rect x="200" y="380" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="380" width="2.42" height="12" rx="6" fill="#e63946"/>
+<rect x="200" y="380" width="2.41" height="12" rx="6" fill="#e63946"/>
 <text x="740" y="392" text-anchor="end">0.5%</text>
 <text x="30" y="424">C</text>
 <rect x="200" y="412" width="450" height="12" rx="6" fill="#21262d"/>
@@ -45,11 +45,11 @@
 <text x="740" y="424" text-anchor="end">0.5%</text>
 <text x="30" y="456">Makefile</text>
 <rect x="200" y="444" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="444" width="1.92" height="12" rx="6" fill="#e63946"/>
+<rect x="200" y="444" width="1.91" height="12" rx="6" fill="#e63946"/>
 <text x="740" y="456" text-anchor="end">0.4%</text>
 <text x="30" y="488">Mako</text>
 <rect x="200" y="476" width="450" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="476" width="1.14" height="12" rx="6" fill="#e63946"/>
+<rect x="200" y="476" width="1.13" height="12" rx="6" fill="#e63946"/>
 <text x="740" y="488" text-anchor="end">0.3%</text>
-<text x="30" y="530" class="muted">Updated 2026-11-25 17:21 UTC</text>
+<text x="30" y="530" class="muted">Updated 2026-11-26 17:00 UTC</text>
 </svg>

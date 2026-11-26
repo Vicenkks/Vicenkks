@@ -49,10 +49,10 @@ approach: Learn → Experiment → Build → Improve
 
 | Quest | Focus |
 |:---|:---|
-| 🧠 Machine Learning | Explore how data becomes useful models |
-| ⚙️ Operating Systems | Understand how software interacts with the machine |
-| 🧩 Algorithms | Strengthen problem-solving foundations |
-| 🛠️ Development | Put university learning into practice |
+| Machine Learning | Explore how data becomes useful models |
+| Operating Systems | Understand how software interacts with the machine |
+| Algorithms | Strengthen problem-solving foundations |
+| Development | Put university learning into practice |
 
 ## `04 // GITHUB ANALYTICS`
 
@@ -66,7 +66,7 @@ approach: Learn → Experiment → Build → Improve
 
 <div align="center">
 
-`♟ Chess` · `✏️ Drawing` · `📚 Learning new things`
+` Chess` · ` Drawing` · ` Learning new things`
 
 </div>
 
